@@ -1,0 +1,60 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title>Star Wars Quote App</title>
+  </head>
+
+  <body>
+    <h1>Simple Node Express MongoDB Project</h1>
+    <div class="container">
+      <div class="block">
+        <form action="/quotes" method="POST">
+          <input type="text" placeholder="name" name="name" />
+          <input type="text" placeholder="quote" name="quote" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="block">
+        <!--
+            EJS는 object를 HTML로 자동으로 변환하지 못함
+            따라서 looping하면 됨
+         -->
+         <div class="title">
+           <h2>Quotes</h2>
+         </div>
+        <div class="content">
+          <% for(var i=0; i < quotes.length; i++) { %>
+              <li class="quote">
+                  <span><%= quotes[i].name %></span>:
+                  <span><%= quotes[i].quote %></span>
+              </li>
+          <% } %>
+        </div>
+      </div>
+  
+      <div class="block">
+          <h2>Darth Vadar invades!</h2>
+          <p>
+            Replace first Yoda's quote with a quote written by Darth Vadar
+          </p>
+          <button id="update-button">Replace Yoda's quote</button>
+      </div>
+  
+      <div class="block">
+          <h2>Remove Darth Vadar!</h2>
+          <p>
+            Delete one Darth Vadar's quote. Does nothing if there are no more Darth
+            Vadar's quote
+          </p>
+          <button id="delete-button">Delete Darth Vadar's quote</button>
+          <div id="message"></div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

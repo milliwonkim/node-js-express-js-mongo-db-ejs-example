@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    border: 3px solid black;
+    padding: 10px;
+    width: 90vw;
+    height: 90vh;
+
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 400px 400px;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.block {
+    height: 300px;
+    display: flex;
+    overflow: auto;
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 3px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.quote {
+    margin: 6px;
+    border: 2px solid black;
+    padding: 10px;
+}
